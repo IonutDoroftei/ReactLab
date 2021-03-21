@@ -1,0 +1,52 @@
+.App {
+  text-align: center;
+  height: 100vh;
+}
+
+.body-page-content {
+  width: 100%;
+}
+
+.NavigationContainer {
+  display: flex;
+  max-width: 200px;
+  width: 100%;
+  flex-direction: column;
+  background-color: #282c34;
+}
+
+.NavigationContainer a {
+  color: #FFFFFF;
+  font-size: 25px;
+  margin: 25px 0;
+  text-decoration: unset;
+}
+
+.NavigationContainer a:hover {
+  transform: scale(1.1);
+}
+
+.WelcomePageContainer {
+  width: 100%;;
+}
+
+.body-container {
+  display: flex;
+  height: calc(100vh - 70px);
+}
+
+.App-header {
+  background-color: #282c34;
+  max-height: 70px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
