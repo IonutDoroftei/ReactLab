@@ -1,0 +1,96 @@
+{
+  "people": [
+    {
+      "name":"Doroftei Bia",
+      "age":25,
+      "booksLibrary":[
+         {
+            "id":1,
+            "title":"Un veac de singuratate",
+            "author":"Gabriel García Márquez",
+            "nobel":true
+         },
+   {
+    "id":2,
+
+            "title":"Zbor deasupra unui cuib de cuci",
+            "author":"Ken Kaise",
+            "nobel":false
+         },
+   {
+    "id":3,
+
+            "title":"Dragoste in vremea holerei",
+            "author":"Gabriel García Márquez",
+            "nobel":false
+         }
+      ]
+   },{
+    "name":"Doroftei Ionut",
+    "age":26,
+    "booksLibrary":[
+       {
+        "id":1,
+          "title":"Un veac de singuratate",
+          "author":"Gabriel García Márquez",
+          "nobel":true
+       },
+       {
+        "id":5,
+          "title":"Winnetou",
+          "author":"Karl May",
+          "nobel":false
+       },
+       {
+        "id":6,
+          "title":"Crima din Orient Express",
+          "author":"Agatha Christie",
+          "nobel":false
+       }
+    ]
+ }
+  ],
+  "comments": [
+    {
+      "bookId":1,
+      "text":"O carte frumoasa!",
+      "rating":5
+   },
+   {
+      "bookId":1,
+      "text":"O carte interesanta",
+      "rating":4
+   },
+   {
+      "bookId":5,
+      "text":"O carte superba care te captiveaza",
+      "rating":5
+   },
+   {
+      "bookId":2,
+      "text":"O carte buna",
+      "rating":5
+   },
+   {
+      "bookId":6,
+      "text":"Suspans si mister. Mi-a placut foarte mult -_-",
+      "rating":5
+   }
+  ],
+  "tasks" : [
+     {
+        "status": "new",
+        "name" : "task 1"
+     },
+
+     {
+      "status": "started",
+      "name" : "task 2"
+      },
+
+      {
+         "status": "testing",
+         "name" : "task 3"
+      }
+  ]
+}

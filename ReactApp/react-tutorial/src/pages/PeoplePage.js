@@ -10,7 +10,7 @@ class PeoplePage extends Component {
     }
 
     componentDidMount() {
-        axios.get("http://localhost:3004/people")
+        axios.get("http://localhost:3000/people")
         .then(res => {
             this.setState({people : res.data});
         })
