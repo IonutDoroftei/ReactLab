@@ -8,6 +8,7 @@ class NavigationBar extends Component {
         <Link to="/people"> People </Link>
         <Link to="/books"> Books </Link>
         <Link to="/todo"> To Do </Link>
+        <Link to="/tasks"> Tasks List </Link>
       </div>
     );
   }

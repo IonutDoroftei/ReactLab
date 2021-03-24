@@ -7,6 +7,7 @@ import PeoplePage from "./pages/PeoplePage";
 import Books from "./pages/BooksPage";
 import NavigationBar from "./components/NavigationBar";
 import TodoApp from "./TodoApp";
+import Test from "./pages/Test";
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
               <Route path="/people" component={PeoplePage} />
               <Route path="/books" component={Books} />
               <Route path="/todo" component={TodoApp} />
+              <Route path="/tasks" component={Test} />
             </Switch>
           </div>
         </div>

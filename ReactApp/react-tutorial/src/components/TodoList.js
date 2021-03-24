@@ -7,9 +7,17 @@ import { VISIBILITY_FILTERS } from "../constants";
 const TodoList = ({ todos }) => (
   <ul>
     {todos && todos.length
-      ? todos.map((todos, index) => {
-          return <Todo key={"todo-${todo.is}"} todo={todo} />;
+      ? todos.map((todo, index) => {
+          return <Todo todo={todo} />;
         })
       : "There are not any tasks"}
   </ul>
 );
+
+const mapStateToProps = state => {
+  const {visibilityFilter} = state;
+  const todos = getTodosByVisibilityFilter(state, visibilityFilter);
+  return {todos};
+};
+
+export default connect(mapStateToProps)(TodoList);

@@ -1,4 +1,4 @@
-import { ADD_TODO, TOGGLE_TODO, SET_FILTER } from "./actionTypes";
+import { ADD_TODO, TOGGLE_TODO, SET_FILTER, ADD_TASK, POPULATE_DATA } from "./actionTypes";
 
 let nextTodoId = 0;
 
@@ -18,4 +18,14 @@ export const toggleTodo = (id) => ({
 export const setFilter = (filter) => ({
   type: SET_FILTER,
   payload: { filter },
+});
+
+export const addTask = (task) => ({
+  type: ADD_TASK,
+  payload: { task },
+});
+
+export const populateData = (data) => ({
+  type: POPULATE_DATA,
+  payload: { data },
 });
