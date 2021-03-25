@@ -1,4 +1,4 @@
-import {ADD_TASK, POPULATE_DATA} from '../actionTypes';
+import {ADD_TASK, CHANGE_STATUS, POPULATE_DATA} from '../actionTypes';
 
 const data  =  {
     info: [], 
@@ -19,6 +19,13 @@ export default function(state = data, action) {
                 ...state,
                 info:action.payload.data,
                 isLoading: false
+            }
+        }
+
+        case CHANGE_STATUS: {
+            return {
+                ...state,
+                info:action.payload.data
             }
         }
 

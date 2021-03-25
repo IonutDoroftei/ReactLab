@@ -1,4 +1,4 @@
-import { ADD_TODO, TOGGLE_TODO, SET_FILTER, ADD_TASK, POPULATE_DATA } from "./actionTypes";
+import { ADD_TODO, TOGGLE_TODO, SET_FILTER, ADD_TASK, POPULATE_DATA, CHANGE_STATUS } from "./actionTypes";
 
 let nextTodoId = 0;
 
@@ -27,5 +27,10 @@ export const addTask = (task) => ({
 
 export const populateData = (data) => ({
   type: POPULATE_DATA,
+  payload: { data },
+});
+
+export const changeStatus = (data) => ({
+  type: CHANGE_STATUS,
   payload: { data },
 });

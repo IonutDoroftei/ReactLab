@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, {Component} from 'react';
 import  {connect} from 'react-redux';
-import {addTask, populateData} from "../redux/actions"
+import {addTask, changeStatus, populateData} from "../redux/actions"
 
 class Test extends Component {
     constructor() {
@@ -23,8 +23,15 @@ class Test extends Component {
     .then(response => this.props.populateData(response.data))
     }
 
+    changeStatus(task, index){
+        let tasks = this.props.info;
+        tasks[index].status = "done";
+        this.props.changeStatus(tasks);
+        this.setState({inputValue:""});
+    }
+
     render() {
-        console.log(this.props.info)
+
         if(this.props.isLoading) {
             this.callForData() 
             return(
@@ -34,13 +41,15 @@ class Test extends Component {
 
         return(
             <div>
-                <ul>
-                  {this.props.info.map((task, index) => 
-                    (<li key={index}><span>{task.name}</span></li> )
-                    )}
-                </ul>
+                <ol>
+                  {this.props.info.map((task, index) => (
+                    <li key={index}>
+                      <span>{task.name} {task.status}</span>
+                      <button onClick={() => this.changeStatus(task, index)} class="ui primary basic button">Done</button>
+                    </li>))}
+                </ol>
                 <input onChange={(value) => this.setState({inputValue: value.target.value})} value={this.state.inputValue}/>
-                <button onClick={() => this.addTaskOnClick()}>Click</button>
+                <button onClick={() => this.addTaskOnClick()}>Add a new ticket</button>
             </div>
         )
     }
@@ -59,6 +68,9 @@ const mapDispatchToProps = dispatch => ({
     },
     populateData: data => {
         dispatch(populateData(data));
+    },
+    changeStatus: data => {
+        dispatch(changeStatus(data));
     }
    });
 export default connect(mapStateToProps, mapDispatchToProps) (Test)

@@ -21,9 +21,22 @@ class PeoplePage extends Component {
         
         return(
            <div className="body-page-content">
-               <ul>
-                   {this.state.people.map(p=><li>{p.name}</li>)}
-               </ul>
+               <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Books</th>
+                </tr>
+
+                {this.state.people.map(p=>
+                <tr>
+                    <td>{p.name}</td>
+                    <td>{p.age}</td>
+                    <td>{p.booksLibrary.length}</td>
+                </tr>
+                )}
+
+               </table>
            </div>
         )
     }
