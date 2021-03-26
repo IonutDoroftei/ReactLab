@@ -32,7 +32,10 @@ class Test extends Component {
 
     render() {
 
-        if(this.props.isLoading) {
+        const { isLoading } = this.props;
+        const { info } = this.props;
+
+        if(isLoading) {
             this.callForData() 
             return(
                 <p>Loading....</p>
@@ -42,7 +45,7 @@ class Test extends Component {
         return(
             <div>
                 <ol>
-                  {this.props.info.map((task, index) => (
+                  {info.map((task, index) => (
                     <li key={index}>
                       <span>{task.name} {task.status}</span>
                       <button onClick={() => this.changeStatus(task, index)} class="ui primary basic button">Done</button>
