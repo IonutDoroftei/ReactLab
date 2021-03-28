@@ -32,10 +32,9 @@ class Test extends Component {
   }
 
   render() {
-    const { isLoading } = this.props;
-    const { info } = this.props;
+    const { isLoading, info } = this.props;
 
-    if(isLoading) {
+    if( isLoading ) {
         this.callForData() 
         return(
             <p>Loading....</p>
@@ -43,16 +42,18 @@ class Test extends Component {
     }
 
     return(
-        <div>
-            <ol>
+        <div className="TasksListPage">
+            <ol className="tasksConatiner">
               {info.map((task, index) => (
                 <li key={index}>
                   <span>{task.name} {task.status}</span>
-                  <button onClick={() => this.changeStatus(task, index)} class="ui primary basic button">Done</button>
+                  <button onClick={() => this.changeStatus(task, index)} class="TicketBtn">Done</button>
                 </li>))}
             </ol>
-            <input onChange={(value) => this.setState({inputValue: value.target.value})} value={this.state.inputValue}/>
-            <button onClick={() => this.addTaskOnClick()}>Add a new ticket</button>
+            <div className="AddNewTickets">
+                <input onChange={(value) => this.setState({inputValue: value.target.value})} value={this.state.inputValue}/>
+                <button onClick={() => this.addTaskOnClick()}>Add a new ticket</button>
+            </div>
         </div>
     )
   }

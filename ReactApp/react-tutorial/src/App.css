@@ -50,3 +50,57 @@
 .App-link {
   color: #61dafb;
 }
+
+.tasksConatiner {
+  width: fit-content;
+}
+
+.tasksConatiner li {
+  font-size: 18px;
+  font-weight: 600;
+  color: #3C4043;
+}
+
+.tasksConatiner li:nth-child(even) {
+  background-color: #FFFFFF;
+}
+
+.tasksConatiner li:nth-child(odd) {
+  background-color: #F4F4F4;
+}
+
+.TicketBtn {
+  margin: 0 5px;
+  border: none;
+  background-color: #3895D3;
+  border-radius: 4px;
+  padding: 3px 5px;
+  color: #FFFFFF;
+  font-size: 12px;
+  width: 50px;
+  font-weight: 100;
+  height: 25px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.TicketBtn:hover {
+  border: 1px solid #3895D3;
+  background-color: #FFFFFF;
+  color: #3895D3;
+}
+
+.TasksListPage {
+  display: flex;
+}
+
+.AddNewTickets {
+  margin-top: 15px;
+}
+
+.AddNewTickets input {
+  max-width: 155px;
+  height: 21px;
+  border-radius: 5px;
+  border: 1px solid #3C4043;
+}

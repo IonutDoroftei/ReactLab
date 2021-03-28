@@ -1,13 +1,14 @@
 import "./App.css";
 import React, { Component } from "react";
 import Header from "./components/Header";
-import WelcomePage from "./pages/WelcomePage";
+// import WelcomePage from "./pages/WelcomePage";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import PeoplePage from "./pages/PeoplePage";
-import Books from "./pages/BooksPage";
+// import PeoplePage from "./pages/PeoplePage";
+// import Books from "./pages/BooksPage";
 import NavigationBar from "./components/NavigationBar";
-import TodoApp from "./TodoApp";
-import Test from "./pages/Test";
+// import TodoApp from "./TodoApp";
+// import Test from "./pages/Test";
+import routes from "./routes";
 
 class App extends Component {
   render() {
@@ -18,11 +19,7 @@ class App extends Component {
           <div className="body-container">
             <NavigationBar />
             <Switch>
-              <Route path="/" exact component={WelcomePage} />
-              <Route path="/people" component={PeoplePage} />
-              <Route path="/books" component={Books} />
-              <Route path="/todo" component={TodoApp} />
-              <Route path="/tasks" component={Test} />
+              { routes.map(item => <Route exact path={item.path} component={item.component}/>) }
             </Switch>
           </div>
         </div>
