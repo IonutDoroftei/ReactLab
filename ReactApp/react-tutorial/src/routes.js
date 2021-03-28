@@ -3,6 +3,7 @@ import PeoplePage from "./pages/PeoplePage";
 import Books from "./pages/BooksPage";
 import TodoApp from "./TodoApp";
 import Test from "./pages/Test";
+import Articles from "./pages/Articles"
 
 const routes = [
     {
@@ -33,6 +34,12 @@ const routes = [
         component: Test,
         path: "/tasks",
         name: "Test"
+    },
+
+    {
+        component: Articles,
+        path: "/articles",
+        name: "Articles"
     }
 ]
 

@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addTask, changeStatus, populateData } from "../redux/actions";
+import { addTask, changeStatus, populateData } from "../redux/actions/actions";
 
 class Test extends Component {
   constructor() {

@@ -1,8 +1,5 @@
 import {
     ADD_TASK,
-    CALL_API,
-    CALL_API_FAILED,
-    CALL_API_SUCCESS,
     CHANGE_STATUS,
     POPULATE_DATA
 } from '../actionTypes';
@@ -34,29 +31,6 @@ export default function (state = data, action) {
             return {
                 ...state,
                 info: action.payload.data
-            }
-        }
-
-        case CALL_API: {
-            return {
-                ...state,
-                isLoading: true
-            }
-        }
-
-        case CALL_API_SUCCESS: {
-            console.log(action, "success")
-            return {
-                ...state,
-                isLoading: false,
-            }
-        }
-
-        case CALL_API_FAILED: {
-            console.log(action, "Error")
-            return {
-                ...state,
-                isLoading: false
             }
         }
 

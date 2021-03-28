@@ -4,11 +4,9 @@ import {
   SET_FILTER,
   ADD_TASK,
   POPULATE_DATA,
-  CHANGE_STATUS,
-  CALL_API,
-  CALL_API_SUCCESS,
-  CALL_API_FAILED,
-} from "./actionTypes";
+  CHANGE_STATUS
+} from "../actionTypes";
+import { GET_ARTICLES, SET_ARTICLES } from "../reducers/articlesReducer";
 
 let nextTodoId = 0;
 
@@ -45,17 +43,11 @@ export const changeStatus = (data) => ({
   payload: { data },
 });
 
-export const callApi = (params) => ({
-  type: CALL_API,
-  payload: { params },
+export const getArticles = () => ({
+  type: GET_ARTICLES
 });
 
-export const callApiSuccess = (data) => ({
-  type: CALL_API_SUCCESS,
-  payload: { data },
-});
-
-export const callApiFailed = (error) => ({
-  type: CALL_API_FAILED,
-  payload: { error },
+export const setArticles = (articles) => ({
+  type: SET_ARTICLES,
+  payload: { articles }
 });
