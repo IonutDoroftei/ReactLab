@@ -34,28 +34,44 @@ class Test extends Component {
   render() {
     const { isLoading, info } = this.props;
 
-    if( isLoading ) {
-        this.callForData() 
-        return(
-            <p>Loading....</p>
-        )
+    if (isLoading) {
+      this.callForData();
+      return <p>Loading....</p>;
     }
 
-    return(
-        <div className="TasksListPage">
-            <ol className="tasksConatiner">
-              {info.map((task, index) => (
-                <li key={index}>
-                  <span>{task.name} {task.status}</span>
-                  <button onClick={() => this.changeStatus(task, index)} class="TicketBtn">Done</button>
-                </li>))}
-            </ol>
-            <div className="AddNewTickets">
-                <input onChange={(value) => this.setState({inputValue: value.target.value})} value={this.state.inputValue}/>
-                <button onClick={() => this.addTaskOnClick()}>Add a new ticket</button>
-            </div>
+    return (
+      <div className="TasksListPage">
+        <ol className="tasksConatiner">
+          {info.map((task, index) => (
+            <li key={index}>
+              <span className={task.status}>
+                {task.name} : {task.status}
+              </span>
+              <button
+                onClick={() => this.changeStatus(task, index)}
+                className="TicketBtn"
+              >
+                Done
+              </button>
+              <button className="TicketBtn">Edit</button>
+
+              <button className="TicketBtn">Delete</button>
+            </li>
+          ))}
+        </ol>
+        <div className="AddNewTickets">
+          <input
+            onChange={(value) =>
+              this.setState({ inputValue: value.target.value })
+            }
+            value={this.state.inputValue}
+          />
+          <button onClick={() => this.addTaskOnClick()}>
+            Add a new ticket
+          </button>
         </div>
-    )
+      </div>
+    );
   }
 }
 

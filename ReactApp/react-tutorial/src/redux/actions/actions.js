@@ -6,7 +6,10 @@ import {
   POPULATE_DATA,
   CHANGE_STATUS
 } from "../actionTypes";
-import { GET_ARTICLES, SET_ARTICLES } from "../reducers/articlesReducer";
+import {
+  GET_ARTICLES,
+  SET_ARTICLES
+} from "../reducers/articlesReducer";
 
 let nextTodoId = 0;
 
@@ -20,27 +23,37 @@ export const addTodo = (content) => ({
 
 export const toggleTodo = (id) => ({
   type: TOGGLE_TODO,
-  payload: { id },
+  payload: {
+    id
+  },
 });
 
 export const setFilter = (filter) => ({
   type: SET_FILTER,
-  payload: { filter },
+  payload: {
+    filter
+  },
 });
 
 export const addTask = (task) => ({
   type: ADD_TASK,
-  payload: { task },
+  payload: {
+    task
+  },
 });
 
 export const populateData = (data) => ({
   type: POPULATE_DATA,
-  payload: { data },
+  payload: {
+    data
+  },
 });
 
 export const changeStatus = (data) => ({
   type: CHANGE_STATUS,
-  payload: { data },
+  payload: {
+    data
+  },
 });
 
 export const getArticles = () => ({
@@ -49,5 +62,7 @@ export const getArticles = () => ({
 
 export const setArticles = (articles) => ({
   type: SET_ARTICLES,
-  payload: { articles }
+  payload: {
+    articles
+  }
 });

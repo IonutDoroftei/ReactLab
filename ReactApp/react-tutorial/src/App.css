@@ -16,7 +16,7 @@
 }
 
 .NavigationContainer a {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 25px;
   margin: 25px 0;
   text-decoration: unset;
@@ -27,7 +27,7 @@
 }
 
 .WelcomePageContainer {
-  width: 100%;;
+  width: 100%;
 }
 
 .body-container {
@@ -55,27 +55,39 @@
   width: fit-content;
 }
 
+.done + .TicketBtn {
+  background-color: #98dbac;
+  cursor: default;
+}
+
+.done + .TicketBtn:hover {
+  background-color: #98dbac;
+  cursor: default;
+  border: 1px solid #98dbac;
+  color: #ffffff;
+}
+
 .tasksConatiner li {
   font-size: 18px;
   font-weight: 600;
-  color: #3C4043;
+  color: #3c4043;
 }
 
 .tasksConatiner li:nth-child(even) {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 .tasksConatiner li:nth-child(odd) {
-  background-color: #F4F4F4;
+  background-color: #f4f4f4;
 }
 
 .TicketBtn {
   margin: 0 5px;
   border: none;
-  background-color: #3895D3;
+  background-color: #3895d3;
   border-radius: 4px;
   padding: 3px 5px;
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 12px;
   width: 50px;
   font-weight: 100;
@@ -85,9 +97,13 @@
 }
 
 .TicketBtn:hover {
-  border: 1px solid #3895D3;
-  background-color: #FFFFFF;
-  color: #3895D3;
+  border: 1px solid #3895d3;
+  background-color: #ffffff;
+  color: #3895d3;
+}
+
+.TicketBtn:focus {
+  outline: none;
 }
 
 .TasksListPage {
@@ -102,5 +118,5 @@
   max-width: 155px;
   height: 21px;
   border-radius: 5px;
-  border: 1px solid #3C4043;
+  border: 1px solid #3c4043;
 }
