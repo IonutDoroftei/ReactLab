@@ -7,6 +7,7 @@ class Test extends Component {
   constructor() {
     super();
     this.state = { inputValue: "" };
+    this.state = { triggerState: "" };
   }
 
   addTaskOnClick() {
@@ -28,7 +29,7 @@ class Test extends Component {
     let tasks = this.props.info;
     tasks[index].status = "done";
     this.props.changeStatus(tasks);
-    this.setState({ inputValue: "" });
+    this.setState({ triggerState: "" });
   }
 
   render() {
