@@ -43,6 +43,13 @@ export const addTask = (task) => ({
   },
 });
 
+export const removeTask = (task) => ({
+  type: REMOVE_TASK,
+  payload: {
+    task
+  },
+});
+
 export const populateData = (data) => ({
   type: POPULATE_DATA,
   payload: {

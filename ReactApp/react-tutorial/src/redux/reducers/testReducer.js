@@ -1,7 +1,8 @@
 import {
     ADD_TASK,
     CHANGE_STATUS,
-    POPULATE_DATA
+    POPULATE_DATA,
+    REMOVE_TASK
 } from '../actionTypes';
 
 const data = {
@@ -16,6 +17,13 @@ export default function (state = data, action) {
             return {
                 ...state,
                 info: [...state.info, action.payload.task]
+            }
+        }
+
+        case REMOVE_TASK: {
+            return {
+                ...state,
+                info: action.payload.task
             }
         }
 

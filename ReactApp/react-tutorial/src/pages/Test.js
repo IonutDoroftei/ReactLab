@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addTask, changeStatus, populateData } from "../redux/actions/actions";
+import { addTask, changeStatus, populateData, removeTask } from "../redux/actions/actions";
 
 class Test extends Component {
   constructor() {
@@ -17,6 +17,11 @@ class Test extends Component {
     };
     this.props.addTask(obj);
     this.setState({ inputValue: "" });
+  }
+
+  removeTaskOnClick(index) {
+    let tasks = this.props.info.filter((item,idx )=> idx != index);
+    this.props.removeTask(tasks);
   }
 
   callForData() {
@@ -56,7 +61,7 @@ class Test extends Component {
               </button>
               <button className="TicketBtn">Edit</button>
 
-              <button className="TicketBtn">Delete</button>
+              <button onClick={() => this.removeTaskOnClick(index)} className="TicketBtn">Delete</button>
             </li>
           ))}
         </ol>
@@ -86,6 +91,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => ({
   addTask: (task) => {
     dispatch(addTask(task));
+  },
+  removeTask: (task) => {
+    dispatch(removeTask(task));
   },
   populateData: (data) => {
     dispatch(populateData(data));
