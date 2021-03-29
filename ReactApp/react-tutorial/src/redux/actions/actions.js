@@ -4,7 +4,8 @@ import {
   SET_FILTER,
   ADD_TASK,
   POPULATE_DATA,
-  CHANGE_STATUS
+  CHANGE_STATUS,
+  REMOVE_TASK
 } from "../actionTypes";
 import {
   GET_ARTICLES,

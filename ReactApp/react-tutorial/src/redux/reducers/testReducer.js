@@ -1,7 +1,8 @@
 import {
     ADD_TASK,
     CHANGE_STATUS,
-    POPULATE_DATA
+    POPULATE_DATA,
+    REMOVE_TASK
 } from '../actionTypes';
 
 const data = {

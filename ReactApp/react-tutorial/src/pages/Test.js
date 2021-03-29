@@ -44,12 +44,12 @@ class Test extends Component {
         <ol className="tasksConatiner">
           {info.map((task, index) => (
             <li key={index}>
-              <span className={task.status}>
+              <span>
                 {task.name} : {task.status}
               </span>
               <button
                 onClick={() => this.changeStatus(task, index)}
-                className="TicketBtn"
+                className={"TicketBtn" + " " + task.status}
               >
                 Done
               </button>

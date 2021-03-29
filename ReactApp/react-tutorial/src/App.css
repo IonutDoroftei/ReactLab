@@ -55,18 +55,6 @@
   width: fit-content;
 }
 
-.done + .TicketBtn {
-  background-color: #98dbac;
-  cursor: default;
-}
-
-.done + .TicketBtn:hover {
-  background-color: #98dbac;
-  cursor: default;
-  border: 1px solid #98dbac;
-  color: #ffffff;
-}
-
 .tasksConatiner li {
   font-size: 18px;
   font-weight: 600;
@@ -104,6 +92,18 @@
 
 .TicketBtn:focus {
   outline: none;
+}
+
+.TicketBtn.done {
+  background-color: #98dbac;
+  cursor: default;
+}
+
+.TicketBtn.done:hover {
+  background-color: #98dbac;
+  cursor: default;
+  border: 1px solid #98dbac;
+  color: #ffffff;
 }
 
 .TasksListPage {
