@@ -7,17 +7,13 @@ const data = {
 
 export default function (state = data, action) {
     switch (action.type) {
-        case SET_ARTICLES: {
-            console.log("Reducer data : "+JSON.stringify(action.payload.articles))
+        case SET_ARTICLES: 
             return {
                 articlesInfo: action.payload.articles
             }
-        }
-
-        default:{
-            console.log("Default")
-
+        
+        default:
             return state;
-        }
+    
     }
 }

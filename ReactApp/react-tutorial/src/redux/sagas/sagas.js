@@ -1,5 +1,5 @@
 import { put, call, takeEvery, takeLatest } from "redux-saga/effects";
-import { setArticles } from "../actions/actions";
+import { populateData, setArticles } from "../actions/actions";
 import {GET_ARTICLES } from "../reducers/articlesReducer";
 import { getAllArticles } from "./api/api";
 
@@ -7,9 +7,7 @@ import { getAllArticles } from "./api/api";
 function* getArticlesData(action) {
     try {
         const articles = yield call(getAllArticles);
-        console.log("Populate Redux:" + JSON.stringify(articles))
         yield put(setArticles(articles));
-        console.log("after yield");
     } catch (error) {
         console.log(error);
     }

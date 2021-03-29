@@ -34,7 +34,7 @@ class Test extends Component {
 
   render() {
     const { isLoading, info } = this.props;
-
+    console.log(JSON.stringify(info))
     if (isLoading) {
       this.callForData();
       return <p>Loading....</p>;
@@ -78,10 +78,10 @@ class Test extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    info: state.info,
-    isLoading: state.isLoading,
-  };
-};
+    info: state.testReducer.info,
+    isLoading: state.testReducer.isLoading,
+  }
+}
 
 const mapDispatchToProps = (dispatch) => ({
   addTask: (task) => {
@@ -92,6 +92,6 @@ const mapDispatchToProps = (dispatch) => ({
   },
   changeStatus: (data) => {
     dispatch(changeStatus(data));
-  },
-});
+  }
+})
 export default connect(mapStateToProps, mapDispatchToProps)(Test);

@@ -1,35 +1,32 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { getArticles } from "../redux/actions/actions";
 
-class Articles extends Component {
+class Articles extends React.Component {
   componentDidMount() {
     this.props.getArticlesFromAPI();
   }
 
   render() {
-    console.log("-------" + this.props.articlesInfo);
-    console.log("---!!!!----" + this.props.info);
-
+    console.log("-------" + this.props.articles);
     return (
       <div className="body-page-content">
-        Articles {this.props.articlesInfo}{" "}
+        {JSON.stringify(this.props.articles)}
       </div>
     );
   }
 }
-
-const mapStateToProps = (state) => {
-  return {
-    articlesInfo: state.articlesInfo,
-    info: state.info,
-  };
-};
 
 const mapDispatchToProps = (dispatch) => ({
   getArticlesFromAPI: (articles) => {
     dispatch(getArticles(articles));
   },
 });
+
+const mapStateToProps = (state)=>{
+  return {
+    articles : state.articlesReducer.articlesInfo
+  }
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Articles);
