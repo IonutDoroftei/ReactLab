@@ -25,6 +25,15 @@ class ModalDelete extends React.Component {
     this.setState({ show: true });
   }
 
+  acceptDelete() {
+    {
+      this.props.deleteAction();
+    }
+    {
+      this.handleClose();
+    }
+  }
+
   render() {
     return (
       <>
@@ -45,7 +54,7 @@ class ModalDelete extends React.Component {
             <Button variant="secondary" onClick={this.handleClose}>
               No
             </Button>
-            <Button variant="primary" onClick={this.handleClose}>
+            <Button variant="primary" onClick={() => this.acceptDelete()}>
               Yes
             </Button>
           </Modal.Footer>

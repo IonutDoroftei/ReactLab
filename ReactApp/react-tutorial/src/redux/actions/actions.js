@@ -9,6 +9,7 @@ import {
 } from "../actionTypes";
 import {
   GET_ARTICLES,
+  REMOVE_ARTICLES,
   SET_ARTICLES
 } from "../reducers/articlesReducer";
 
@@ -73,4 +74,11 @@ export const setArticles = (articles) => ({
   payload: {
     articles
   }
+});
+
+export const removeArticle = (articles) => ({
+  type: REMOVE_ARTICLES,
+  payload: {
+    articles
+  },
 });

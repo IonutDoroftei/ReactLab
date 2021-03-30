@@ -2,10 +2,16 @@ import React from "react";
 import { connect } from "react-redux";
 import { getArticles } from "../redux/actions/actions";
 import ModalDelete from "../components/ModalDelete";
+import { removeArticle } from "../redux/actions/actions";
 
 class Articles extends React.Component {
   componentDidMount() {
     this.props.getArticlesFromAPI();
+  }
+
+  removeArticlesOnClick(index) {
+    let article = this.props.articles.filter((item, idx) => idx !== index);
+    this.props.removeArt(article);
   }
 
   render() {
@@ -24,7 +30,13 @@ class Articles extends React.Component {
                 <img src={art.image} alt={art.image}></img>
               </div>
               <div className="articleBtnsContainer">
-                <ModalDelete nameArticleData={art.title} />
+                <ModalDelete
+                  nameArticleData={art.title}
+                  deleteAction={() => this.removeArticlesOnClick(index)}
+                />
+                {/* <button onClick>
+                  Delete
+                </button> */}
               </div>
             </div>
             <p>Comment Section: {art.comment}</p>
@@ -38,6 +50,9 @@ class Articles extends React.Component {
 const mapDispatchToProps = (dispatch) => ({
   getArticlesFromAPI: (articles) => {
     dispatch(getArticles(articles));
+  },
+  removeArt: (articles) => {
+    dispatch(removeArticle(articles));
   },
 });
 

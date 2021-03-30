@@ -1,5 +1,6 @@
 export const GET_ARTICLES = "GET_ARTICLES";
 export const SET_ARTICLES = "SET_ARTICLES";
+export const REMOVE_ARTICLES = "REMOVE_ARTICLES";
 
 const data = {
     articlesInfo: []
@@ -7,13 +8,17 @@ const data = {
 
 export default function (state = data, action) {
     switch (action.type) {
-        case SET_ARTICLES: 
+        case SET_ARTICLES:
             return {
                 articlesInfo: action.payload.articles
             }
-        
-        default:
-            return state;
-    
+
+            case REMOVE_ARTICLES:
+                return {
+                    articlesInfo: action.payload.articles
+                }
+
+                default:
+                    return state;
     }
 }
