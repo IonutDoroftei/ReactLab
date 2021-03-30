@@ -1,7 +1,17 @@
-import { put, call, takeEvery, takeLatest } from "redux-saga/effects";
-import { populateData, setArticles } from "../actions/actions";
-import {GET_ARTICLES } from "../reducers/articlesReducer";
-import { getAllArticles } from "./api/api";
+import {
+    put,
+    call,
+    takeEvery
+} from "redux-saga/effects";
+import {
+    setArticles
+} from "../actions/actions";
+import {
+    GET_ARTICLES
+} from "../reducers/articlesReducer";
+import {
+    getAllArticles
+} from "./api/api";
 
 // Handlers
 function* getArticlesData(action) {

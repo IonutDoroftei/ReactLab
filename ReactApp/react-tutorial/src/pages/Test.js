@@ -1,7 +1,12 @@
 import axios from "axios";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addTask, changeStatus, populateData, removeTask } from "../redux/actions/actions";
+import {
+  addTask,
+  changeStatus,
+  populateData,
+  removeTask,
+} from "../redux/actions/actions";
 
 class Test extends Component {
   constructor() {
@@ -20,7 +25,7 @@ class Test extends Component {
   }
 
   removeTaskOnClick(index) {
-    let tasks = this.props.info.filter((item,idx )=> idx != index);
+    let tasks = this.props.info.filter((item, idx) => idx !== index);
     this.props.removeTask(tasks);
   }
 
@@ -39,7 +44,7 @@ class Test extends Component {
 
   render() {
     const { isLoading, info } = this.props;
-    console.log(JSON.stringify(info))
+    console.log(JSON.stringify(info));
     if (isLoading) {
       this.callForData();
       return <p>Loading....</p>;
@@ -61,7 +66,12 @@ class Test extends Component {
               </button>
               <button className="TicketBtn">Edit</button>
 
-              <button onClick={() => this.removeTaskOnClick(index)} className="TicketBtn">Delete</button>
+              <button
+                onClick={() => this.removeTaskOnClick(index)}
+                className="TicketBtn"
+              >
+                Delete
+              </button>
             </li>
           ))}
         </ol>
@@ -85,8 +95,8 @@ const mapStateToProps = (state) => {
   return {
     info: state.testReducer.info,
     isLoading: state.testReducer.isLoading,
-  }
-}
+  };
+};
 
 const mapDispatchToProps = (dispatch) => ({
   addTask: (task) => {
@@ -100,6 +110,6 @@ const mapDispatchToProps = (dispatch) => ({
   },
   changeStatus: (data) => {
     dispatch(changeStatus(data));
-  }
-})
+  },
+});
 export default connect(mapStateToProps, mapDispatchToProps)(Test);
