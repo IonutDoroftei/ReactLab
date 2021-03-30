@@ -84,10 +84,19 @@
   cursor: pointer;
 }
 
+.TicketBtn--Delete {
+  background-color: #e65e5e;
+}
+
 .TicketBtn:hover {
   border: 1px solid #3895d3;
   background-color: #ffffff;
   color: #3895d3;
+}
+
+.TicketBtn--Delete:hover {
+  border: 1px solid #e65e5e;
+  color: #e65e5e;
 }
 
 .TicketBtn:focus {
@@ -119,4 +128,36 @@
   height: 21px;
   border-radius: 5px;
   border: 1px solid #3c4043;
+}
+
+.articleContent {
+  display: flex;
+}
+
+.articleTextContainer {
+  flex: 1;
+}
+
+.articleTextContainer p {
+  column-count: 2;
+  text-align: initial;
+}
+
+.articleImageContainer {
+  flex: 0.5;
+}
+
+.articleImageContainer img {
+  max-width: 300px;
+}
+
+.articleBox {
+  box-shadow: 0 2px 20px 0 rgb(0 0 0 / 10%);
+  border-radius: 8px;
+  margin: 1% 2%;
+  padding: 10px 2%;
+}
+
+.articleBox:hover {
+  transform: scale(1.02);
 }

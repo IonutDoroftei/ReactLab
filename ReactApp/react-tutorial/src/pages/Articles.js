@@ -8,10 +8,24 @@ class Articles extends React.Component {
   }
 
   render() {
-    console.log("-------" + this.props.articles);
+    const { articles } = this.props;
+
     return (
       <div className="body-page-content">
-        {JSON.stringify(this.props.articles)}
+        {articles.map((art, index) => (
+          <div key={index} className="articleBox">
+            <h2>{art.title}</h2>
+            <div className="articleContent">
+              <div className="articleTextContainer">
+                <p>{art.description}</p>
+              </div>
+              <div className="articleImageContainer">
+                <img src={art.image} alt={art.image}></img>
+              </div>
+            </div>
+            <p>Comment Section: {art.comment}</p>
+          </div>
+        ))}
       </div>
     );
   }
@@ -23,10 +37,10 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
-const mapStateToProps = (state)=>{
+const mapStateToProps = (state) => {
   return {
-    articles : state.articlesReducer.articlesInfo
-  }
-}
+    articles: state.articlesReducer.articlesInfo,
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Articles);

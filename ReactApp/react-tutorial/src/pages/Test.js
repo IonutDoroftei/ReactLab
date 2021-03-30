@@ -44,7 +44,7 @@ class Test extends Component {
 
   render() {
     const { isLoading, info } = this.props;
-    console.log(JSON.stringify(info));
+
     if (isLoading) {
       this.callForData();
       return <p>Loading....</p>;
@@ -68,7 +68,7 @@ class Test extends Component {
 
               <button
                 onClick={() => this.removeTaskOnClick(index)}
-                className="TicketBtn"
+                className="TicketBtn TicketBtn--Delete"
               >
                 Delete
               </button>
