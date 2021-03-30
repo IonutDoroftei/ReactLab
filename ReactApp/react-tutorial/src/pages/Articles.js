@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { getArticles } from "../redux/actions/actions";
+import ModalDelete from "../components/ModalDelete";
 
 class Articles extends React.Component {
   componentDidMount() {
@@ -21,6 +22,9 @@ class Articles extends React.Component {
               </div>
               <div className="articleImageContainer">
                 <img src={art.image} alt={art.image}></img>
+              </div>
+              <div className="articleBtnsContainer">
+                <ModalDelete nameArticleData={art.title} />
               </div>
             </div>
             <p>Comment Section: {art.comment}</p>

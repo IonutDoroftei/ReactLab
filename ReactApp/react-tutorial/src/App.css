@@ -135,7 +135,7 @@
 }
 
 .articleTextContainer {
-  flex: 1;
+  flex: 0.6;
 }
 
 .articleTextContainer p {
@@ -144,7 +144,11 @@
 }
 
 .articleImageContainer {
-  flex: 0.5;
+  flex: 0.3;
+}
+
+.articleBtnsContainer {
+  flex: 0.1;
 }
 
 .articleImageContainer img {
@@ -159,5 +163,13 @@
 }
 
 .articleBox:hover {
-  transform: scale(1.02);
+  transform: scale(1.01);
+}
+
+.articleBox .DeleteBtn {
+  display: none;
+}
+
+.articleBox:hover .DeleteBtn {
+  display: block;
 }
