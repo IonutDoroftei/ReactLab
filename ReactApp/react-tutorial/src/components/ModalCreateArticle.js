@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Button, Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-class ModalDelete extends React.Component {
+class ModalCreateArticle extends React.Component {
   constructor(props) {
     super(props);
 
@@ -15,20 +15,15 @@ class ModalDelete extends React.Component {
   }
 
   handleClose() {
-    this.setState({ show: false });
+    this.setState({
+      show: false,
+    });
   }
 
   handleShow() {
-    this.setState({ show: true });
-  }
-
-  acceptDelete() {
-    {
-      this.props.deleteAction();
-    }
-    {
-      this.handleClose();
-    }
+    this.setState({
+      show: true,
+    });
   }
 
   render() {
@@ -41,17 +36,18 @@ class ModalDelete extends React.Component {
         >
           Delete article
         </Button>
-
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>{this.props.nameArticleData}</Modal.Title>
+            <Modal.Title> {this.props.nameArticleData} </Modal.Title>
           </Modal.Header>
-          <Modal.Body>Are you sure you want to remove this article?</Modal.Body>
+          <Modal.Body>
+            <label>Article title</label>
+          </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={this.handleClose}>
               No
             </Button>
-            <Button variant="primary" onClick={() => this.acceptDelete()}>
+            <Button variant="primary" onClick={this.handleClose}>
               Yes
             </Button>
           </Modal.Footer>
@@ -61,4 +57,4 @@ class ModalDelete extends React.Component {
   }
 }
 
-export default ModalDelete;
+export default ModalCreateArticle;

@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { getArticles } from "../redux/actions/actions";
 import ModalDelete from "../components/ModalDelete";
+import ModalCreateArticle from "../components/ModalCreateArticle";
 import { removeArticle } from "../redux/actions/actions";
 
 class Articles extends React.Component {
@@ -19,6 +20,7 @@ class Articles extends React.Component {
 
     return (
       <div className="body-page-content">
+        <ModalCreateArticle />
         {articles.map((art, index) => (
           <div key={index} className="articleBox">
             <h2>{art.title}</h2>
@@ -34,9 +36,6 @@ class Articles extends React.Component {
                   nameArticleData={art.title}
                   deleteAction={() => this.removeArticlesOnClick(index)}
                 />
-                {/* <button onClick>
-                  Delete
-                </button> */}
               </div>
             </div>
             <p>Comment Section: {art.comment}</p>
