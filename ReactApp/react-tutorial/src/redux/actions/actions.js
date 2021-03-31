@@ -8,6 +8,7 @@ import {
   REMOVE_TASK
 } from "../actionTypes";
 import {
+  ADD_ARTICLES,
   GET_ARTICLES,
   REMOVE_ARTICLES,
   SET_ARTICLES
@@ -78,6 +79,13 @@ export const setArticles = (articles) => ({
 
 export const removeArticle = (articles) => ({
   type: REMOVE_ARTICLES,
+  payload: {
+    articles
+  },
+});
+
+export const addArticle = (articles) => ({
+  type: ADD_ARTICLES,
   payload: {
     articles
   },

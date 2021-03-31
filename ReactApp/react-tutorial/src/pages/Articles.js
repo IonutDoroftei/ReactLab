@@ -3,9 +3,18 @@ import { connect } from "react-redux";
 import { getArticles } from "../redux/actions/actions";
 import ModalDelete from "../components/ModalDelete";
 import ModalCreateArticle from "../components/ModalCreateArticle";
-import { removeArticle } from "../redux/actions/actions";
+import { removeArticle, addArticle } from "../redux/actions/actions";
 
 class Articles extends React.Component {
+  constructor() {
+    super();
+    this.state = { message: null };
+  }
+
+  callbackFunction = (childData) => {
+    this.setState({ message: childData });
+  };
+
   componentDidMount() {
     this.props.getArticlesFromAPI();
   }
@@ -20,7 +29,8 @@ class Articles extends React.Component {
 
     return (
       <div className="body-page-content">
-        <ModalCreateArticle />
+        <ModalCreateArticle parentCallback={this.callbackFunction} />
+        <p> {this.state.message} </p>
         {articles.map((art, index) => (
           <div key={index} className="articleBox">
             <h2>{art.title}</h2>
@@ -52,6 +62,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   removeArt: (articles) => {
     dispatch(removeArticle(articles));
+  },
+  addArt: (articles) => {
+    dispatch(addArticle(articles));
   },
 });
 
