@@ -52,7 +52,7 @@ class Test extends Component {
 
     return (
       <div className="TasksListPage">
-        <ol className="tasksConatiner">
+        <ul className="tasksConatiner">
           {info.map((task, index) => (
             <li key={index}>
               <span>
@@ -74,7 +74,7 @@ class Test extends Component {
               </button>
             </li>
           ))}
-        </ol>
+        </ul>
         <div className="AddNewTickets">
           <input
             onChange={(value) =>
