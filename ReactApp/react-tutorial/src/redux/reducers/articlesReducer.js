@@ -2,6 +2,7 @@ export const GET_ARTICLES = "GET_ARTICLES";
 export const SET_ARTICLES = "SET_ARTICLES";
 export const REMOVE_ARTICLES = "REMOVE_ARTICLES";
 export const ADD_ARTICLES = "ADD_ARTICLES";
+export const ADD_REDUX_ARTICLES = "ADD_REDUX_ARTICLES";
 
 const data = {
     articlesInfo: []
@@ -19,13 +20,13 @@ export default function (state = data, action) {
                     articlesInfo: action.payload.articles
                 }
 
-                case ADD_ARTICLES:
-                    return {
-                        ...state,
-                        articlesInfo: [...state.articlesInfo, action.payload.task]
-                    }
+            case ADD_REDUX_ARTICLES:
+                return {
+                    ...state,
+                    articlesInfo: [...state.articlesInfo, action.payload.articles]
+                }
 
-                    default:
-                        return state;
+                default:
+                    return state;
     }
 }

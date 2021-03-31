@@ -10,10 +10,7 @@ class ModalCreateArticle extends React.Component {
     this.handleClose = this.handleClose.bind(this);
 
     this.state = { show: false };
-    this.state = { artTitle: "" };
-    this.state = { artContent: "" };
-    this.state = { artImage: "" };
-    this.state = { artComment: "" };
+    this.state = { newArticle: {title: "", description: "", image: "", comment: ""} };
   }
 
   handleClose() {
@@ -29,8 +26,8 @@ class ModalCreateArticle extends React.Component {
   }
 
   sendData = () => {
-    const { artTitle } = this.state;
-    this.props.parentCallback(artTitle);
+    const { newArticle } = this.state;
+    this.props.parentCallback(newArticle);
   };
 
   testFunction() {
@@ -59,7 +56,7 @@ class ModalCreateArticle extends React.Component {
           centered
         >
           <Modal.Header closeButton>
-            <Modal.Title> {this.props.nameArticleData} </Modal.Title>
+            <Modal.Title/>
           </Modal.Header>
           <Modal.Body>
             <Form>
@@ -69,9 +66,9 @@ class ModalCreateArticle extends React.Component {
                   type="text"
                   placeholder="Enter title"
                   onChange={(value) =>
-                    this.setState({ artTitle: value.target.value })
+                    this.setState(prevState => ({newArticle: {...prevState.newArticle, title:value.target.value} }))
                   }
-                  value={this.state.artTitle}
+                  value={this.state.newArticle.title}
                 />
               </Form.Group>
 
@@ -81,9 +78,9 @@ class ModalCreateArticle extends React.Component {
                   as="textarea"
                   aria-label="With textarea"
                   onChange={(value) =>
-                    this.setState({ artContent: value.target.value })
+                    this.setState(prevState => ({newArticle: {...prevState.newArticle, description:value.target.value} }))
                   }
-                  value={this.state.artContent}
+                  value={this.state.newArticle.description}
                 />
               </InputGroup>
 
@@ -98,9 +95,9 @@ class ModalCreateArticle extends React.Component {
                   id="basic-url"
                   aria-describedby="basic-addon3"
                   onChange={(value) =>
-                    this.setState({ artImage: value.target.value })
+                    this.setState(prevState => ({newArticle: {...prevState.newArticle, image:value.target.value} }))
                   }
-                  value={this.state.artImage}
+                  value={this.state.newArticle.image}
                 />
               </InputGroup>
 
@@ -110,9 +107,9 @@ class ModalCreateArticle extends React.Component {
                   type="text"
                   placeholder="Comment"
                   onChange={(value) =>
-                    this.setState({ artComment: value.target.value })
+                    this.setState(prevState => ({newArticle: {...prevState.newArticle, comment:value.target.value} }))
                   }
-                  value={this.state.artComment}
+                  value={this.state.newArticle.comment}
                 />
               </Form.Group>
 

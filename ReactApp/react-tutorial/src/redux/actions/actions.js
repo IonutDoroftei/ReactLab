@@ -11,7 +11,8 @@ import {
   ADD_ARTICLES,
   GET_ARTICLES,
   REMOVE_ARTICLES,
-  SET_ARTICLES
+  SET_ARTICLES,
+  ADD_REDUX_ARTICLES
 } from "../reducers/articlesReducer";
 
 let nextTodoId = 0;
@@ -86,6 +87,13 @@ export const removeArticle = (articles) => ({
 
 export const addArticle = (articles) => ({
   type: ADD_ARTICLES,
+  payload: {
+    articles
+  },
+});
+
+export const addReduxArticle = (articles) => ({
+  type: ADD_REDUX_ARTICLES,
   payload: {
     articles
   },

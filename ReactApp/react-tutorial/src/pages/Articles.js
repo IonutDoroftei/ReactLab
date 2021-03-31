@@ -12,7 +12,7 @@ class Articles extends React.Component {
   }
 
   callbackFunction = (childData) => {
-    this.setState({ message: childData });
+    this.props.addArt(childData);
   };
 
   componentDidMount() {
@@ -30,7 +30,6 @@ class Articles extends React.Component {
     return (
       <div className="body-page-content">
         <ModalCreateArticle parentCallback={this.callbackFunction} />
-        <p> {this.state.message} </p>
         {articles.map((art, index) => (
           <div key={index} className="articleBox">
             <h2>{art.title}</h2>

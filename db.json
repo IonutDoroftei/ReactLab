@@ -1,111 +1,121 @@
 {
   "people": [
     {
-      "name":"Doroftei Bia",
-      "age":25,
-      "booksLibrary":[
-         {
-            "id":1,
-            "title":"Un veac de singuratate",
-            "author":"Gabriel García Márquez",
-            "nobel":true
-         },
-   {
-    "id":2,
-
-            "title":"Zbor deasupra unui cuib de cuci",
-            "author":"Ken Kaise",
-            "nobel":false
-         },
-   {
-    "id":3,
-
-            "title":"Dragoste in vremea holerei",
-            "author":"Gabriel García Márquez",
-            "nobel":false
-         }
+      "name": "Doroftei Bia",
+      "age": 25,
+      "booksLibrary": [
+        {
+          "id": 1,
+          "title": "Un veac de singuratate",
+          "author": "Gabriel García Márquez",
+          "nobel": true
+        },
+        {
+          "id": 2,
+          "title": "Zbor deasupra unui cuib de cuci",
+          "author": "Ken Kaise",
+          "nobel": false
+        },
+        {
+          "id": 3,
+          "title": "Dragoste in vremea holerei",
+          "author": "Gabriel García Márquez",
+          "nobel": false
+        }
       ]
-   },{
-    "name":"Doroftei Ionut",
-    "age":26,
-    "booksLibrary":[
-       {
-        "id":1,
-          "title":"Un veac de singuratate",
-          "author":"Gabriel García Márquez",
-          "nobel":true
-       },
-       {
-        "id":5,
-          "title":"Winnetou",
-          "author":"Karl May",
-          "nobel":false
-       },
-       {
-        "id":6,
-          "title":"Crima din Orient Express",
-          "author":"Agatha Christie",
-          "nobel":false
-       }
-    ]
- }
+    },
+    {
+      "name": "Doroftei Ionut",
+      "age": 26,
+      "booksLibrary": [
+        {
+          "id": 1,
+          "title": "Un veac de singuratate",
+          "author": "Gabriel García Márquez",
+          "nobel": true
+        },
+        {
+          "id": 5,
+          "title": "Winnetou",
+          "author": "Karl May",
+          "nobel": false
+        },
+        {
+          "id": 6,
+          "title": "Crima din Orient Express",
+          "author": "Agatha Christie",
+          "nobel": false
+        }
+      ]
+    }
   ],
   "comments": [
     {
-      "bookId":1,
-      "text":"O carte frumoasa!",
-      "rating":5
-   },
-   {
-      "bookId":1,
-      "text":"O carte interesanta",
-      "rating":4
-   },
-   {
-      "bookId":5,
-      "text":"O carte superba care te captiveaza",
-      "rating":5
-   },
-   {
-      "bookId":2,
-      "text":"O carte buna",
-      "rating":5
-   },
-   {
-      "bookId":6,
-      "text":"Suspans si mister. Mi-a placut foarte mult -_-",
-      "rating":5
-   }
+      "bookId": 1,
+      "text": "O carte frumoasa!",
+      "rating": 5
+    },
+    {
+      "bookId": 1,
+      "text": "O carte interesanta",
+      "rating": 4
+    },
+    {
+      "bookId": 5,
+      "text": "O carte superba care te captiveaza",
+      "rating": 5
+    },
+    {
+      "bookId": 2,
+      "text": "O carte buna",
+      "rating": 5
+    },
+    {
+      "bookId": 6,
+      "text": "Suspans si mister. Mi-a placut foarte mult -_-",
+      "rating": 5
+    }
   ],
-  "tasks" : [
-     {
-        "status": "new",
-        "name" : "task 1"
-     },
-
-     {
+  "tasks": [
+    {
       "status": "new",
-      "name" : "task 2"
-      },
-
-      {
-         "status": "new",
-         "name" : "task 3"
-      }
+      "name": "task 1"
+    },
+    {
+      "status": "new",
+      "name": "task 2"
+    },
+    {
+      "status": "new",
+      "name": "task 3"
+    }
   ],
-
- "articles":[
-      {
-         "title":"First Article",
-         "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-         "image":"https://homepages.cae.wisc.edu/~ece533/images/airplane.png",
-         "comment":2
-      },
-      {
-         "title":"Beautiful Article",
-         "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-         "image":"https://homepages.cae.wisc.edu/~ece533/images/girl.png",
-         "comment":9
-      }
-   ]
+  "articles": [
+    {
+      "title": "First Article",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "image": "https://homepages.cae.wisc.edu/~ece533/images/airplane.png",
+      "comment": 2
+    },
+    {
+      "title": "Beautiful Article",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "image": "https://homepages.cae.wisc.edu/~ece533/images/girl.png",
+      "comment": 9
+    },
+    {
+      "id": 33,
+      "title": "Test Post",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "image": "https://homepages.cae.wisc.edu/~ece533/images/girl.png",
+      "comment": 10
+    },
+    {
+      "title": "hgfhgf",
+      "description": "hjfgj",
+      "image": "jhgjgh",
+      "comment": "jhgjgh",
+      "id": 34
+    }
+  ]
 }
