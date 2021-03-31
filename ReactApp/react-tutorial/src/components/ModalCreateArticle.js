@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Modal } from "react-bootstrap";
+import { Button, Modal, Form, InputGroup, FormControl } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 class ModalCreateArticle extends React.Component {
@@ -34,23 +34,52 @@ class ModalCreateArticle extends React.Component {
           className="DeleteBtn"
           onClick={this.handleShow}
         >
-          Delete article
+          Create a new article
         </Button>
-        <Modal show={this.state.show} onHide={this.handleClose}>
+        <Modal
+          show={this.state.show}
+          onHide={this.handleClose}
+          size="lg"
+          centered
+        >
           <Modal.Header closeButton>
             <Modal.Title> {this.props.nameArticleData} </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <label>Article title</label>
+            <Form>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Article title</Form.Label>
+                <Form.Control type="text" placeholder="Enter title" />
+              </Form.Group>
+
+              <label htmlFor="basic-url">Add article content</label>
+              <InputGroup>
+                <FormControl as="textarea" aria-label="With textarea" />
+              </InputGroup>
+
+              <label htmlFor="basic-url">Add image url</label>
+              <InputGroup className="mb-3">
+                <InputGroup.Prepend>
+                  <InputGroup.Text id="basic-addon3">
+                    https://homepages.cae.wisc.edu/~ece533/images/
+                  </InputGroup.Text>
+                </InputGroup.Prepend>
+                <FormControl id="basic-url" aria-describedby="basic-addon3" />
+              </InputGroup>
+
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Comment</Form.Label>
+                <Form.Control type="text" placeholder="Comment" />
+              </Form.Group>
+
+              <Button variant="primary" type="submit">
+                Submit
+              </Button>
+              <Button variant="secondary" onClick={this.handleClose}>
+                No
+              </Button>
+            </Form>
           </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={this.handleClose}>
-              No
-            </Button>
-            <Button variant="primary" onClick={this.handleClose}>
-              Yes
-            </Button>
-          </Modal.Footer>
         </Modal>
       </>
     );

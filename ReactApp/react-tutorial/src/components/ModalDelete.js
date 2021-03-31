@@ -42,7 +42,7 @@ class ModalDelete extends React.Component {
           Delete article
         </Button>
 
-        <Modal show={this.state.show} onHide={this.handleClose}>
+        <Modal show={this.state.show} onHide={this.handleClose} centered>
           <Modal.Header closeButton>
             <Modal.Title>{this.props.nameArticleData}</Modal.Title>
           </Modal.Header>
